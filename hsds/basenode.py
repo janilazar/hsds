@@ -348,7 +348,7 @@ def updateReadyState(app):
 
 def _activeTaskCount():
     count = 0
-    for task in asyncio.Task.all_tasks():
+    for task in asyncio.all_tasks():
         if not task.done():
             count += 1
     return count
@@ -368,7 +368,7 @@ async def doHealthCheck(app, chaos_die=0):
         updateReadyState(app)
 
     svmem = psutil.virtual_memory()
-    num_tasks = len(asyncio.Task.all_tasks())
+    num_tasks = len(asyncio.all_tasks())
     msg = f"health check vm: {svmem.percent} num tasks: {num_tasks} "
     msg += f"active tasks: {_activeTaskCount()}"
     log.debug(msg)

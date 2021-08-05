@@ -4,5 +4,19 @@
 *.DS_STORE
 *.log
 *.vscode
-passwd.txt
+
 *.egg-info
+
+# ignoring the text editor's files
+*.sublime-workspace
+*.sublime-project
+
+# ignoring native builds
+dist
+build
+
+
+# ignore the created config files
+groups.txt
+passwd.txt
+override.yml
