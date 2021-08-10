@@ -301,7 +301,7 @@ async def getDomainObjects(app, root_id, include_attrs=False, bucket=None):
     if len(crawler._obj_dict) >= max_objects_limit:
         msg = "getDomainObjects - too many objects:  "
         msg += f"{len(crawler._obj_dict)}, returning None"
-        log.info()
+        log.info(msg)
         return None
     else:
         msg = f"getDomainObjects returning: {len(crawler._obj_dict)} objects"
@@ -593,7 +593,7 @@ async def get_domains(request):
             if "root" not in domain_json:
                 msg = f"get_domains - skipping folder: {domain} for "
                 msg += "attribute query search"
-                log.debug()
+                log.debug(msg)
                 del domain_keys[domain]
                 continue
 

@@ -68,7 +68,7 @@ class MarathonClient:
 
             if instances:
                 msg = f"SN instances {instances}"
-                log.debug()
+                log.debug(msg)
                 return instances
             else:
                 log.warn("Incomplete or malformed JSON returned from SN node.")

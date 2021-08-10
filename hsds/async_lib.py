@@ -130,7 +130,7 @@ async def updateDatasetInfo(app, dset_id, dataset_info, bucket=None):
         if "chunk_table" not in layout:
             msg = "Expected to find chunk_table in dataset layout for "
             msg += f"{dset_id}"
-            log.error()
+            log.error(msg)
             return
         chunktable_id = layout["chunk_table"]
         # get  state for dataset from DN.
